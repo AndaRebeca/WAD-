@@ -1,0 +1,192 @@
+html, body {
+	height: 100%;
+}
+body {  
+	font-family: "Roboto";
+	height: 100%;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+p{
+	color: #909090;
+	line-height: 1.8;
+}
+
+section {
+	float:left;
+	width: 100%;
+}
+
+/* Special classes */
+.no-padding {
+	padding: 0;
+}
+.btn-outline {
+	background: transparent;
+	color: #fff;
+	border: 1px solid;
+	padding: 20px 40px;
+}
+
+.site-header { 
+	background-color: #fff;
+	padding: 45px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 99;
+	line-height: 26px;
+}
+.site-logo h2 {
+	margin: 0;
+	font-weight: 900;
+	font-size: 20px;
+}
+.primary-menu li {
+	display: inline-block;
+	padding-left: 40px;
+	font-weight: 300;
+	color: #909090;
+}
+
+.primary-menu li a {
+	color: #909090;
+}
+
+.top-links ul li {
+	display:inline;
+	padding-left: 30px;
+	font-weight: 300;
+	color: #909090;
+}
+
+.top-links ul li span {
+	padding: 0 10px;
+	color: #a78b67;
+}
+
+.site-hero {
+	height: 100%;
+	background: url(assets/img/site-hero/site-hero.jpg);
+	background-size: cover;
+	background-position: center;
+	margin: 80px 0 0;
+	float: left;
+	width: 100%;
+}
+
+.inner-hero {
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.inner-hero h1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #a78b67;
+}
+
+.section-heading{
+	text-align: center;
+	padding: 120px 0;
+}
+
+.section-heading h1{
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 900;
+	letter-spacing: 5px;
+	margin: 0;
+}
+.section-heading p{
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+#collection-container-wrapper {
+	height: 600px;
+}
+
+.collection-item {
+	height: 600px;
+}
+
+.collection-item-meta {
+	position: absolute;
+	bottom: 40px;
+	left: 10%;
+}
+
+#new-collection-women {
+	background: url('assets/img/hp-collection/01.jpg');
+	background-size: cover;
+}
+
+#new-collection-man {
+	background: url('assets/img/hp-collection/03.jpg');
+	background-size: cover;
+}
+
+/* Featured Products */
+.ft-product-inner {
+	text-align: center;
+}
+.ft-product-name {
+	font-weight: 300;
+	font-size: 20px;
+	color: #000;
+}
+.ft-product-thumbnail {
+	height: 300px;
+	background-color: #ccc;
+}
+/* SITE FOOTER */
+.site-footer {
+	float: left;
+	width: 100%;
+	padding: 180px 0;
+	background-color: #000;
+	margin: 80px 0 0;
+	color: #fff;
+	text-align: center;
+}
+.social-media-wrapper li {
+	display: inline-block;
+	padding: 0 20px;
+	font-size: 20px;
+	margin: 0 0 30px;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 3px;
+}
+.social-media-wrapper li i.fa {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 50%;
+	border: 1px solid;
+	margin-right: 15px;
+}
+.footer-primary-menu {
+	margin: 0 0 30px;
+}
+.footer-nav-menu li {
+	display: inline-block;
+	padding: 0 20px;
+}
+.copy {
+	color: #fff;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
