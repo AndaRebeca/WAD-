@@ -1,12 +1,105 @@
 html, body { height: 100%; }
-body { font-family: "Nunito"; }
-.brand-logo { color: #000; text-transform: uppercase; letter-spacing: 2px; font-family: "Suranna"; font-size: 20px; margin: 40px 0; }
-.account-container { display: flex; align-items: center; justify-content: center; height: 100%; }
-.page-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover!important; background-position: 100%!important; }
-#login-page { background: url('assets/images/03.jpg'); }
-.login-wrapper { width: 350px; z-index: 99; background: rgba(245, 237, 237, 0.93); position: relative; padding: 40px; text-align: center; color: #fff; }
-.form-group input { background: transparent; border: 1px solid #9c927f; border-radius: 0; padding: 20px; margin: 0 0 30px; box-shadow: none; }
-.form-submit { border: none!important;background: #000!important; padding: 8px 25px!important;}
+body { font-family: "Montserrat"; transition: 0.5s ease-in-out; }
+body.js-move-left { margin-left: -20%; }
+ul { list-style: none; margin: 0; padding: 0; }
+/* SPECIAL CLASSES */
+.no-padding { padding: 0; }
+.page-header { margin-bottom: 50px; }
+.page-header-icon { font-size: 40px;color: #2ebf0a; margin-right: 40px; }
+.page-header h4 { color: #a7a7a7; font-size: 400; }
+.btn-outline { margin: 40px 0 0; background: transparent; color: #2ebf0a; font-weight: 200; padding: 15px 45px; border-radius: 30px; border: 1px solid; }
+
+.brand-logo { color: #000; text-transform: lowercase; font-family: "Montserrat"; font-size: 20px; font-weight: 700; margin: 40px 0; }
+.account-container {  position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fbfbfb; z-index: 999; display: flex; align-items: center; justify-content: center; height: 100%; visibility: hidden; opacity: 0; transition: 0.5s ease-in-out;}
+.account-container.active { visibility: visible; opacity: 1; }
+.page-background { width: 100%; height: 100%; background-size: cover!important; background-position: 100%!important; }
+#login-page { background: url('assets/images/04.jpg'); }
+.login-wrapper { width: 350px; z-index: 99; background: #fff; position: relative; padding: 40px; text-align: center; color: #a7a7a7; }
+.login-wrapper a { color: #a7a7a7; }
+.form-group label { padding: 10px 0; }
+.form-group input { background: transparent; border: 1px solid #f3f3f3; border-radius: 0; padding: 20px; margin: 0 0 30px; box-shadow: none; }
+.form-group textarea { padding: 20px; border: 1px solid #f3f3f3; }
+.form-submit { border: none!important;background: #f94e15!important; padding: 8px 25px!important;}
 .login-subheading { font-weight: 200; font-size: 12px; letter-spacing: 1px; margin: 0 0 30px;}
 .brand-icon { font-size: 30px; width: 80px; height: 80px; line-height: 80px; text-align: center; border-radius: 50%; border: 2px solid; margin: 0 auto 40px; }
 .brand-icon .icon-cup { line-height: 70px; margin-left: 8px; }
+
+/* SITE HEADER */
+.site-header { background-color: #fff; position: fixed; width: 100%; top: 0; border-bottom: 1px solid #f3f3f3; padding: 40px; z-index: 999; transition: 0.5s ease-in-out; }
+.site-logo h1 { color: #2ebf0a; text-transform: lowercase; font-size: 20px; font-weight: 700; margin: 0; line-height: 1.9; }
+.site-navigation ul li { margin-right: 15px; font-weight: 300; }
+.site-navigation ul li span { color: #2ebf0a; margin-right: 15px; }
+.site-navigation ul li a { color: #a7a7a7; }
+.nav-item { margin-left: 35px; }
+.primary-menu { background: #2ebf0a; height: 100%; width: 30%; z-index: 9999; position: fixed; right: -30%; transition: 0.5s ease-in-out; }
+.primary-menu ul { margin-top: 25%; padding: 80px; }
+.primary-menu ul li { padding: 15px 0; color: #fff; font-weight: 100; margin: 0 0 12px; }
+.primary-menu ul li span { margin-right: 25px; margin-top: -8px; width: 40px; height: 40px; float: left; color: #fff; border: 1px solid; text-align: center; line-height: 40px; border-radius: 50%; }
+.primary-menu.active { right: 0; }
+.main-content { transition: 0.5s ease-in-out; }
+.main-content-blured { /*filter: blur(3px);*/ opacity: 0.3;}
+.primary-menu-top { float: left; width: 100%; color: #fff; padding: 30px; }
+.primary-menu-close {  float: right; font-size: 30px; color: #fff; text-align: center; }
+/* Burger menu */
+.burger-menu { font-size: 25px; }
+.burger-menu .icon-menu { line-height: 1.6; }
+/* User avatar */
+.nav-user li { line-height: 2.9; display: inline-block; }
+.user-avatar-img { width: 40px; height: 40px; float: left; border-radius: 50px; margin-right: 12px; background-size: cover!important; background-position: 50%!important; }
+/* PAGE ACCOUNT */
+.user-account-cover { height: 350px; background: url('assets/images/04.jpg'); background-size: cover; background-position: 100%; margin-top: 90px; }
+.user-account-badge { margin: 80px 0; }
+.user-account-avatar { margin-top: -210px; }
+.user-account-avatar-wrapper {  width: 200px; height: 200px; border-radius: 50%; margin: 40px auto 0; display: block; background-size: cover!important; background-position: 50%!important; border: 20px solid #fff; position: relative; }
+.edit-profile { width: 50px; height: 50px; line-height: 42px; border: 4px solid; background: #2ebf0a; color: #fff; border-radius: 50%; position: absolute; bottom: -12px; right: 0; text-align: center; transition: 0.5s ease-in-out; }
+.edit-profile:hover { transform: scale(1.1); }
+.user-account-meta { margin: 20px 0; text-align: center; }
+.user-account-name h3 {  color: #000; font-weight: 700; margin-bottom: 25px; }
+.user-account-location h4 { margin: 0 0 25px; font-size: 12px; font-weight: 200; color: #a7a7a7; }
+.user-account-location h4 span { margin-right: 5px; color: #2ebf0a; font-size: 18px; }
+.user-account-description {  font-weight: 200; color: #a7a7a7; line-height: 1.9; max-width: 500px; margin: 0 auto; }
+.user-account-option { font-size: 14px; }
+.user-account-option { text-align: center; }
+.user-account-option li { font-size: 14px; display: inline-block; padding: 0 15px; }
+.user-account-option li span { color: #2ebf0a; margin-right: 15px; font-size: 28px; float: left; margin-top: -5px; }
+/* ACCOUNT SETTINGS */
+.account-settings-wrapper { margin: 0 0 0; float: left; width: 100%; }
+.form-settings-panel label, .form-settings-panel input { width: 100%; }
+.form-settings-panel textarea { width: 100%; height: 250px; }
+/* USER FEED */
+.user-feed-item { padding: 20px; }
+.inner-user-feed-item { box-shadow: 0px 8px 20px 6px rgba(24, 32, 111, 0.2); }
+/*.user-feed-item-thumbnail { height: 350px; background-color: #ccc; background: url('assets/images/thumb.jpg'); background-size: cover; }*/
+.user-feed-item-thumbnail { height: 350px; background-color: #ccc; background-size: cover; }
+
+.user-feed-item-meta { padding: 90px 40px; text-align: center; }
+.user-feed-item-title { margin: 0; font-size: 20px;}
+.user-feed-item-date { color: #a7a7a7; }
+/* RECIPE */
+.recipe-container { margin: 120px 0 0; float: left; width: 100%; }
+/* SINGLE PAGE */
+.single-page-container { padding: 120px 0 0; }
+.single-page-thumbnail { height: 500px; background: url('assets/images/203.jpg'); background-size: cover; background-position: 100%; }
+.single-page-header { text-align: center; margin: 80px 0; }
+.single-page-title { max-width: 700px; margin: 20px auto; font-size: 30px; }
+.single-page-date { color: #2ebf0a; font-size: 12px; text-transform: uppercase; letter-spacing: 5px; }
+.single-page-post-author { font-size: 12px; font-weight: 300; font-style: italic; color: #a7a7a7; }
+.single-page-entry-content p { text-align: justify; font-weight: 300; font-size: 14px; color: #a7a7a7; line-height: 1.9; }
+
+/* SITE FOOTER */
+.site-footer { float: left; width: 100%; border-top: 1px solid #f3f3f3; margin: 80px 0 0; padding: 80px 0; }
+.footer-widget { text-align: center; margin: 0 0 45px; }
+.footer-navigation { text-align: center; }
+.footer-navigation ul li { display: inline-block; padding: 0 20px; font-size: 12px; font-weight: 500; text-transform: uppercase; color: #a7a7a7; }
+.copyright { color: #a7a7a7; font-weight: 300; font-size: 12px; }
+
+
+
+
+
+
+
+
+
+
+

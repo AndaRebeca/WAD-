@@ -93,7 +93,8 @@ mysqli_close($link);
 }
 ?>
 
-<?php include('template/header.php'); ?>
+<?php //include('template/header.php'); ?>
+<?php include "template/secondary-header.php"; ?>
 
 	<div class="login-wrapper">
 		<h2>Sign Up</h2>
@@ -124,4 +125,3 @@ mysqli_close($link);
 		<!-- END REGISTER FORM -->
 	</div><!-- wrapper -->   
 
-<?php include('template/footer.php'); ?>

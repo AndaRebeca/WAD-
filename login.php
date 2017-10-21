@@ -49,7 +49,9 @@ if(password_verify($password, $hashed_password)){
 /* Password is correct, so start a new session and
 save the username to the session */
 session_start();
-$_SESSION['username'] = $username;      
+$_SESSION['username'] = $username;    
+$id = $_SESSION['id'];
+$sessionUserName = $_SESSION["username"];  
 header("location: index.php");
 } else{
 // Display an error message if password is not valid
@@ -74,11 +76,12 @@ mysqli_close($link);
 }
 ?>
 
-<?php include('template/header.php'); ?>
+<?php include('template/secondary-header.php'); ?>
 	<div class="page-background" id="login-page"></div><!-- #login-page -->
 	<div class="account-container">
 		<div class="login-wrapper">
 			<h2 class="brand-logo">The Magic Pot</h2>
+			<?php echo $username; ?>
 			<!-- <div class="brand-icon"><div class="icon-cup"></div></div> -->
 			<form class="login-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 				<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
