@@ -1,4 +1,3 @@
-
 <?php include('template/header.php'); ?>
 	<!-- BEGIN ACCOUNT -->
 	<div class="container-fluid">
@@ -10,6 +9,7 @@
 						<a href="account-settings.php"><div class="edit-profile"><span class="icon-options"></span></div></a>
 					</div><!-- .user-account-avatar-wrapper -->
 				</div><!-- .user-account-avatar -->
+				
 				<div class="user-account-meta col-sm-12">
 					<div class="user-account-name"><h3><?php echo $user__alias; ?></h3></div><!-- .user-account-name -->
 					<div class="user-account-location"><h4><span class="icon-direction"></span><?php echo $user__location; ?></h4></div><!-- .user-account-location -->
@@ -30,7 +30,11 @@
 				<div class="user-account-options col-sm-12">
 					<div class="col-sm-12">
 						<ul class="user-account-option ">
-							<li><span class="icon-plus"></span>Add new recipe</li>
+							<li>
+								<a href="add-new-recipe.php">
+									<span class="icon-plus"></span>Add new recipe
+								</a>
+							</li>
 							<li><span class="icon-docs"></span><?php echo $nrBlogs; ?> recipes</li>
 						</ul>
 					</div>
@@ -44,6 +48,14 @@
 				</div>
 			</div>
 
+			<?php if (isset($_SESSION["recipe-deleted-message"])): ?>
+				<div class="alert alert-danger alert-dismissable">
+					<?php echo $_SESSION["recipe-deleted-message"]; ?>
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<?php unset($_SESSION["recipe-deleted-message"]); ?>
+				</div>
+			<?php endif; ?>
+
 			<div class="user-feed">
 				<div class="container">
 					<div class="row">
@@ -55,6 +67,24 @@
 							$blog__thumb = $blog["blog__thumb"];
 							$blog__date = $blog["blog__date"];
 
+							$blogDateArr1 = explode (" ", $blog__date);
+							$blogDate1 = $blogDateArr1[0];
+
+							$blogDateArr2 = explode ("-", $blogDate1);
+
+							$blogDateYear = $blogDateArr2[0]; // Year
+							$blogDateMonth = $blogDateArr2[1]; // Month
+							$blogDateDay = $blogDateArr2[2]; // Day
+
+							$monthArr = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+							if (substr($blogDateMonth, 0, 1) == "0")
+							{
+								$blogDateMonth = substr($blogDateMonth, 1, 1);
+							}
+
+							$blogDateMonth = $monthArr[$blogDateMonth];
+
 							?>
 							<div class="user-feed-item col-md-4 col-sm-6">
 								<div class="inner-user-feed-item">
@@ -63,7 +93,7 @@
 									</div><!-- .user-feed-item-thumbnail -->
 									<div class="user-feed-item-meta">
 										<p class="user-feed-item-date">
-											<?php echo $blog__date; ?>
+											<?php echo $blogDateMonth . " " . $blogDateDay; ?>, <?php echo $blogDateYear; ?>
 										</p><!-- .user-feed-item-date -->
 										
 										<h3 class="user-feed-item-title">

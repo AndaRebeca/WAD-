@@ -1,27 +1,73 @@
 <?php include('template/header.php'); ?>
-	<!-- BEGIN SINGLE PAGE CONTAINER -->
-	<div class="single-page-container">
-		<div class="container-fluid no-padding">
-			<div class="single-page-thumbnail"></div><!-- .single-page-thumbnail -->
-		</div><!-- .container-fluid -->
+<?php 
 
-		<div class="container">
-			<div class="row">
-				<div class="single-page-header">
-					<h3 class="single-page-date">September 20, 2017</h3><!-- .single-page-date -->
-					<h1 class="single-page-title">Roasted Sweet Potato, Chickpea and Kale Salad Bowls</h1><!-- .single-page-title -->
-					<h4 class="single-page-post-author">Posted by <?php echo $user__alias; ?><!-- .single-page-post-author -->
-				</div><!-- .single-page-header -->
+// Get a current recipe ID
+$recipeId = $_GET["recipe-id"];
+$recipeSQL = "SELECT * FROM `blogs` WHERE `blog__id` = $recipeId";
+$recipeQuery = mysqli_query($con, $recipeSQL);
+$recipeRow = mysqli_fetch_row($recipeQuery);
 
-				<div class="single-page-entry-content col-sm-8 col-sm-offset-2">
-					<p>Aliquam elit sem, semper ac augue eu, pellentesque ultricies elit. Curabitur sed consectetur ex, eu laoreet diam. Praesent non neque velit. Phasellus auctor viverra ligula et porttitor. Mauris massa diam, hendrerit vel rutrum sit amet, elementum eget massa. Cras et dictum augue, et scelerisque ipsum. Cras non ullamcorper nunc. Curabitur id placerat neque.</p>
+// Get all columns of current recipe
+$blog__id = $recipeRow[0];
+$blog__title = $recipeRow[1];
+$blog__thumb = $recipeRow[2];
+$blog__content = nl2br($recipeRow[3]);
+$blog__time = nl2br($recipeRow[4]);
+$blog__user__id = $recipeRow[5];
+$blog__date = $recipeRow[6];
 
-					<p>Sed et mattis nibh, vitae vehicula urna. Etiam urna lacus, mollis sed vehicula luctus, sodales nec turpis. Suspendisse potenti. Mauris volutpat a diam nec efficitur. Curabitur id eleifend risus. Proin commodo lacus tortor, id rhoncus justo tincidunt non. Duis varius purus scelerisque purus elementum, posuere sagittis quam viverra. Mauris eget blandit quam. Nunc ultricies, erat sit amet luctus dignissim, ligula nunc consectetur ex, ac bibendum libero ante vitae felis. Aliquam erat volutpat. Sed interdum elementum egestas. Fusce tristique consequat mi. In hac habitasse platea dictumst. Maecenas vel leo accumsan, volutpat felis vel, aliquam lorem. Integer feugiat mauris quam, sed aliquam ipsum posuere porttitor.</p>
+$blogDateArr1 = explode (" ", $blog__date);
+$blogDate1 = $blogDateArr1[0];
 
-					<p>Vestibulum sit amet libero eros. Cras a viverra massa, in ullamcorper nisl. Donec in congue sapien. Pellentesque eget finibus metus, et pretium sem. Morbi lobortis metus non eros consectetur, in scelerisque eros viverra. Aliquam id nisl lacus. Etiam auctor odio et leo finibus accumsan. Cras ac porttitor diam. Aliquam erat volutpat. Curabitur fringilla tortor vel metus posuere, id vestibulum sapien hendrerit. Donec at turpis in nibh ullamcorper elementum. Nam varius neque eleifend, malesuada turpis nec, dapibus sapien. Phasellus pretium dictum neque sed egestas. Nunc a consequat magna. Etiam condimentum erat eu elit feugiat pellentesque. Vivamus volutpat finibus commodo.</p>
-				</div><!-- .single-page-entry-content -->
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</div><!-- .view-recipe-container -->
-	<!-- END SINGLE PAGE CONTAINER -->
+$blogDateArr2 = explode ("-", $blogDate1);
+
+$blogDateYear = $blogDateArr2[0]; // Year
+$blogDateMonth = $blogDateArr2[1]; // Month
+$blogDateDay = $blogDateArr2[2]; // Day
+
+$monthArr = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+if (substr($blogDateMonth, 0, 1) == "0")
+{
+	$blogDateMonth = substr($blogDateMonth, 1, 1);
+}
+
+$blogDateMonth = $monthArr[$blogDateMonth];
+
+?>
+
+<!-- BEGIN SINGLE PAGE CONTAINER -->
+<div class="single-page-container">
+	<div class="container-fluid no-padding">
+		<div class="single-page-thumbnail"></div><!-- .single-page-thumbnail -->
+	</div><!-- .container-fluid -->
+
+	<div class="container">
+		<div class="row">
+			<div class="single-page-header">
+				<!--<h3 class="single-page-date">September 20, 2017</h3>--><!-- .single-page-date -->
+				<h3 class="single-page-date"><?php echo $blogDateMonth . " " . $blogDateDay; ?>, <?php echo $blogDateYear; ?></h3><!-- .single-page-date -->
+				<h1 class="single-page-title"><?php echo $blog__title; ?></h1><!-- .single-page-title -->
+				<h4 class="single-page-post-author">Posted by <?php echo $user__alias; ?></h4> <!-- .single-page-post-author -->
+
+				<a href="edit-recipe.php?&amp;recipe-id=<?php echo $recipeId; ?>" class="btn btn-info">Edit</a>
+				<a href="delete-recipe.php?&amp;recipe-id=<?php echo $recipeId; ?>" class="btn btn-danger">Delete</a>
+			</div><!-- .single-page-header -->
+
+			<div class="single-page-entry-content col-sm-8 col-sm-offset-2">
+				<?php if (strlen($blog__thumb) > 14): ?>
+					<h2>Recipe image</h2>
+					<img src="<?php echo $blog__thumb; ?>" height="200" width="200">
+				<?php endif; ?>
+
+				<h2>Recipe content</h2>
+				<p><?php echo $blog__content; ?></p>
+
+				<h2>Recipe time</h2>
+				<p><?php echo $blog__time; ?></p>
+			</div><!-- .single-page-entry-content -->
+		</div><!-- .row -->
+	</div><!-- .container -->
+</div><!-- .view-recipe-container -->
+<!-- END SINGLE PAGE CONTAINER -->
 <?php include('template/footer.php'); ?>

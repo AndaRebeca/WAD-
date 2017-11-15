@@ -64,7 +64,7 @@
 						</div><!-- .form-group -->
 
 						<div class="form-group">
-							<input type="submit" name="edit_user_submit" value="Submit">
+							<input type="submit" name="edit_user_submit" value="Update profile">
 						</div><!-- .form-group -->
 					</form><!-- .form-settings-panel -->
 				</div><!-- .account-settings-panel -->
