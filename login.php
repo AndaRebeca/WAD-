@@ -77,7 +77,19 @@ mysqli_close($link);
 ?>
 
 <?php include('template/secondary-header.php'); ?>
-	<div class="page-background" id="login-page"></div><!-- #login-page -->
+	<div class="page-background" id="login-page">
+		<div class="login-overlay"></div>
+		<div class="login-page-content">
+			<div class="inner-login-page-content">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+				<h1 class="inner-login-header">Discover our new cooking application</h1>
+			</div></div>
+		</div>
+			</div>
+		</div><!-- .login-page-content -->
+	</div><!-- #login-page -->
 	<div class="account-container">
 		<div class="login-wrapper">
 			<h2 class="brand-logo">The Magic Pot</h2>
@@ -99,4 +111,4 @@ mysqli_close($link);
 			</form><!-- .login-form -->
 		</div><!-- .wrapper -->
 	</div><!-- .account-container -->
-<?php include('template/footer.php'); ?>    
+<?php include('template/footer-secondary.php'); ?>    

@@ -29,16 +29,20 @@ if (isset($_POST["deleteRecipeSubmit"]))
 ?>
 
 <div class="container" style="margin-top: 150px;">
-	<h1>Delete <?php echo $blog__title; ?></h1>
-	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<form action="" method="post" onSubmit="return confirm('Are you sure you want to delete the <?php echo $blog__title; ?> recipe?')">
-				<div class="form-group">
-					<input type="submit" name="deleteRecipeSubmit" value="Delete recipe" class="">
-				</div>
-			</form>
+	<?php if ($sessionUserId == $blog__user__id): ?>
+		<h1>Delete <?php echo $blog__title; ?></h1>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<form action="" method="post" onSubmit="return confirm('Are you sure you want to delete the <?php echo $blog__title; ?> recipe?')">
+					<div class="form-group">
+						<input type="submit" name="deleteRecipeSubmit" value="Delete recipe" class="">
+					</div>
+				</form>
+			</div>
 		</div>
-	</div>
+	<?php else: ?>
+		<div  class="alert alert-danger">Do not try to delete other user recipe!!</div>
+	<?php endif; ?>
 </div>
 
 <?php require "template/footer.php"; ?>

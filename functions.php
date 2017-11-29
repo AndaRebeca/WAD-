@@ -11,14 +11,14 @@
 
 	if(isset($_POST['submit'])){
 	move_uploaded_file($_FILES['file']['tmp_name'],"uploads/".$_FILES['file']['name']);
-	$con = mysqli_connect("localhost","root","root","magic_pan");
+	$con = mysqli_connect("localhost","root","","magic_pan");
 	$q = mysqli_query($con,"UPDATE users SET avatar = '".$_FILES['file']['name']."' WHERE username = '".$_SESSION['username']."'");
 	}
 
 	// Get the current user avatar
 	
 	$currentUserName = $_SESSION["username"];
-	$con = mysqli_connect("localhost","root","root","magic_pan");
+	$con = mysqli_connect("localhost","root","","magic_pan");
 	
 	//echo $currentUserName;
 
@@ -27,6 +27,7 @@
 	$currentUserRow = mysqli_fetch_row($currentUserQuery);
 	$user__id = $currentUserRow[0];
 	$currentUserImg = $currentUserRow[4];
+	$sessionUserId = $currentUserRow[0];
 	$user__alias = $currentUserRow[5];
 	$user__location = $currentUserRow[6];
 	$user__description = $currentUserRow[7];

@@ -100,6 +100,7 @@ if (isset($_POST["editRecipeSubmit"]))
 ?>
 
 <div class="container" style="margin-top: 150px;">
+	<?php if ($sessionUserId == $blog__user__id): ?>
 	<?php if (isset($_SESSION["recipe-edited-message"])): ?>
 		<div class="alert alert-info alert-dismissable">
 			<?php echo $_SESSION["recipe-edited-message"]; ?>
@@ -137,6 +138,9 @@ if (isset($_POST["editRecipeSubmit"]))
 			</form>
 		</div>
 	</div>
+	<?php else: ?>
+		<div  class="alert alert-danger">Do not try to edit other user recipe!!</div>
+	<?php endif; ?>
 </div>
 
 <?php require "template/footer.php"; ?>

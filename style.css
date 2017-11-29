@@ -1,40 +1,65 @@
 html, body { height: 100%; }
-body { font-family: "Montserrat"; transition: 0.5s ease-in-out; }
+body { font-family: "Raleway"; transition: 0.5s ease-in-out; background-color: #F5F6FA; }
 body.js-move-left { margin-left: -20%; }
 ul { list-style: none; margin: 0; padding: 0; }
 /* SPECIAL CLASSES */
 .no-padding { padding: 0; }
 .page-header { margin-bottom: 50px; padding: 40px 0!important; }
-.page-header-icon { font-size: 40px;color: #2ebf0a; margin-right: 40px; }
+.page-header-icon { font-size: 40px;color: #1EC18F; margin-right: 40px; }
 .page-header h4 { color: #a7a7a7; font-size: 400; }
-.btn-outline { margin: 40px 0 0; background: transparent; color: #2ebf0a; font-weight: 200; padding: 15px 45px; border-radius: 30px; border: 1px solid; }
-
+.btn-outline { margin: 40px 0 0; background: transparent; color: #FF3538; font-weight: 300; padding: 15px 45px; border-radius: 30px; border: 1px solid; }
+.btn-edit-avatar { background: transparent; color: #FF3538; border: 1px solid; border-radius: 30px; margin: 10px 0 0; font-weight: 300px; padding: 12px 25px; margin: 30px auto 0; display: block; }
+.btn-outline a { color: #FF3538; }
+.btn-edit { color: #a7a7a7; font-weight: 300; }
+.btn-edit span { color: #1EC18F; }
 .brand-logo { color: #000; text-transform: lowercase; font-family: "Montserrat"; font-size: 20px; font-weight: 700; margin: 40px 0; }
 .account-container {  position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fbfbfb; z-index: 999; display: flex; align-items: center; justify-content: center; height: 100%; visibility: hidden; opacity: 0; transition: 0.5s ease-in-out;}
 .account-container.active { visibility: visible; opacity: 1; }
 .page-background { width: 100%; height: 100%; background-size: cover!important; background-position: 100%!important; }
-#login-page { background: url('assets/images/magda.jpg'); }
+#login-page { background: url('assets/images/bro.jpg'); }
+#login-page .site-footer { display: none; }
+.page-login-btn { border-radius: 5px; font-weight: 200!important; font-weight: 300;}
+.page-login-btn a { color: #fff!important;font-weight: 200!important; }
+.login-logo { color: #fff!important; }
+    #header-ul { text-align: right; }
+    .inner-login-header { max-width: 600px;  font-weight: 300; text-align: left; }
+.login-page-content {  position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; width: 100%; height: 150px; color: #fff; font-weight: 300; text-align: center; }
 .login-wrapper { width: 350px; z-index: 99; background: #fff; position: relative; padding: 40px; text-align: center; color: #a7a7a7; }
 .login-wrapper a { color: #a7a7a7; }
 .form-group label { padding: 10px 0; }
-.form-group input { background: transparent; border: 1px solid #f3f3f3; border-radius: 0; padding: 20px; margin: 0 0 30px; box-shadow: none; }
-.form-group textarea { padding: 20px; border: 1px solid #f3f3f3; }
-.form-submit { border: none!important;background: #f94e15!important; padding: 8px 25px!important;}
+.form-group input { background: #fff; border: 1px solid #f3f3f3; border-radius: 0; padding: 20px; margin: 0 0 30px; box-shadow: none; }
+.form-group textarea { padding: 20px; border: 1px solid #f3f3f3; color: #909090; font-weight: 500; }
+.form-submit { border: none!important; background: #1EC18F!important; padding: 8px 25px!important;}
+#account-settings-save { width: initial; background: transparent; color: #FF3538; border: 1px solid; border-radius: 30px; margin: 10px 0 0; padding: 12px 45px; }
 .login-subheading { font-weight: 200; font-size: 12px; letter-spacing: 1px; margin: 0 0 30px;}
 .brand-icon { font-size: 30px; width: 80px; height: 80px; line-height: 80px; text-align: center; border-radius: 50%; border: 2px solid; margin: 0 auto 40px; }
 .brand-icon .icon-cup { line-height: 70px; margin-left: 8px; }
-
+#page-container { margin-top: 80px;  }
+.home-user-avatar { width: 80px; height: 80px; border-radius: 50%; background-size: cover!important; background-position: 50%!important; }
+.section-heading { padding: 40px 0 20px; }
+.section-heading h1 { margin: 0; font-size: 25px; line-height: 50px; }
+.section-heading h1 span { margin-right: 30px; color: #1EC18F; width: 50px; height: 50px; border: 1px solid; float: left; line-height: 50px; border-radius: 50%; text-align: center; }
 /* SITE HEADER */
-.site-header { background-color: #fff; position: fixed; width: 100%; top: 0; border-bottom: 1px solid #f3f3f3; padding: 40px; z-index: 999; transition: 0.5s ease-in-out; }
-.site-logo h1 { color: #2ebf0a; text-transform: lowercase; font-size: 20px; font-weight: 700; margin: 0; line-height: 1.9; }
+.site-header { background-color: #fff; position: fixed; width: 100%; top: 0; border-bottom: 1px solid #f3f3f3; padding: 20px 0; z-index: 999; transition: 0.5s ease-in-out; }
+#login-site-header { background-color: transparent; border-bottom: none;  }
+#login-site-header .site-navigation ul li { color: #fff; }
+.login-overlay {     background: rgba(20, 21, 20, 0.83); display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+.site-logo h1 { color: #1EC18F; font-size: 20px; margin: 0; line-height: 1.9; }
+.site-logo h1 a { color: #1EC18F; }
+.site-logo img { width: 150px; margin: 8px 0 0; }
 .site-navigation ul li { margin-right: 15px; font-weight: 300; }
-.site-navigation ul li span { color: #2ebf0a; margin-right: 15px; }
+.site-navigation ul li span { color: #1EC18F; margin-right: 15px; }
 .site-navigation ul li a { color: #a7a7a7; }
 .nav-item { margin-left: 35px; }
-.primary-menu { background: #2ebf0a; height: 100%; width: 30%; z-index: 9999; position: fixed; right: -30%; transition: 0.5s ease-in-out; }
+.primary-menu { background: #FF3538; height: 100%; width: 30%; z-index: 9999; position: fixed; top: 0; right: -30%; transition: 0.5s ease-in-out; }
 .primary-menu ul { margin-top: 25%; padding: 80px; }
-.primary-menu ul li { padding: 15px 0; color: #fff; font-weight: 100; margin: 0 0 12px; }
-.primary-menu ul li span { margin-right: 25px; margin-top: -8px; width: 40px; height: 40px; float: left; color: #fff; border: 1px solid; text-align: center; line-height: 40px; border-radius: 50%; }
+.primary-menu ul li { padding: 15px 0; color: #fff; font-weight: 300; margin: 0 0 12px; }
+.primary-menu ul li span { margin-right: 25px; margin-top: -8px; width: 40px; height: 40px; float: left; color: #fff; text-align: center; line-height: 40px; border-radius: 50%; }
 .primary-menu.active { right: 0; }
 .main-content { transition: 0.5s ease-in-out; }
 .main-content-blured { /*filter: blur(3px);*/ opacity: 0.3;}
@@ -47,42 +72,45 @@ ul { list-style: none; margin: 0; padding: 0; }
 .nav-user li { line-height: 2.9; display: inline-block; }
 .user-avatar-img { width: 40px; height: 40px; float: left; border-radius: 50px; margin-right: 12px; background-size: cover!important; background-position: 50%!important; }
 /* PAGE ACCOUNT */
-.user-account-cover { height: 350px; background: url('assets/images/04.jpg'); background-size: cover; background-position: 100%; margin-top: 90px; }
-.user-account-badge { margin: 80px 0; }
-.user-account-avatar { margin-top: -210px; }
-.user-account-avatar-wrapper {  width: 200px; height: 200px; border-radius: 50%; margin: 40px auto 0; display: block; background-size: cover!important; background-position: 50%!important; border: 20px solid #fff; position: relative; }
-.edit-profile { width: 50px; height: 50px; line-height: 42px; border: 4px solid; background: #2ebf0a; color: #fff; border-radius: 50%; position: absolute; bottom: -12px; right: 0; text-align: center; transition: 0.5s ease-in-out; }
+.user-account__cover { height: 350px; background: url('assets/images/2.jpg'); background-size: cover; background-position: 100%;}
+.user-account__badge { margin: 80px 0; }
+.user-account__avatar { margin-top: -210px; }
+.user-account__avatar-wrapper {  width: 200px; height: 200px; border-radius: 50%; margin: 40px auto 0; display: block; background-size: cover!important; background-position: 50%!important; border: 20px solid #fff; position: relative; }
+#user-edit-avatar { margin-top: 120px; }
+#user-edit-badge { margin: 0 0 40px; padding: 0; }
+#user-edit-badge .user-account-meta { text-align: left; margin: 0; padding: 0; }
+#user-edit-badge .user-account-description { margin: 0; }
+.edit-profile { width: 50px; height: 50px; line-height: 42px; border: 4px solid; background: #1EC18F; color: #fff; border-radius: 50%; position: absolute; bottom: -12px; right: 0; text-align: center; transition: 0.5s ease-in-out; }
 .edit-profile:hover { transform: scale(1.1); }
-.user-account-meta { margin: 20px 0; text-align: center; }
-.user-account-name h3 {  color: #000; font-weight: 700; margin-bottom: 25px; }
-.user-account-location h4 { margin: 0 0 25px; font-size: 12px; font-weight: 200; color: #a7a7a7; }
-.user-account-location h4 span { margin-right: 5px; color: #2ebf0a; font-size: 18px; }
-.user-account-description {  font-weight: 200; color: #a7a7a7; line-height: 1.9; max-width: 500px; margin: 0 auto; }
-.user-account-option { font-size: 14px; }
-.user-account-option { text-align: center; }
-.user-account-option li { font-size: 14px; display: inline-block; padding: 0 15px; }
-.user-account-option li span { color: #2ebf0a; margin-right: 15px; font-size: 28px; float: left; margin-top: -5px; }
+.user-account__meta { margin: 20px 0; text-align: center; }
+.user-account__name h3 {  color: #000; font-weight: 700; margin-bottom: 25px; }
+.user-account__location h4 { margin: 0 0 25px; font-size: 12px; font-weight: 200; color: #a7a7a7; }
+.user-account__location h4 span { margin-right: 5px; color: #1EC18F; font-size: 18px; }
+.user-account__description {  font-weight: 200; color: #a7a7a7; line-height: 1.9; max-width: 500px; margin: 0 auto; }
+.user-account__option { font-size: 14px; }
+.user-account__option { text-align: center; }
+.user-account__option li { font-size: 14px; display: inline-block; padding: 0 15px; }
+.user-account__option li span { color: #1EC18F; margin-right: 15px; font-size: 28px; float: left; margin-top: -5px; }
 /* ACCOUNT SETTINGS */
 .account-settings-wrapper { margin: 0 0 0; float: left; width: 100%; }
-.form-settings-panel label, .form-settings-panel input { width: 100%; }
-.form-settings-panel textarea { width: 100%; height: 250px; }
+.form-settings__panel { padding: 0 80px; }
+.form-settings__panel label { width: 100%; color: #909090; font-weight: 500; }
+.form-settings__panel input { width: 100%; color: #d8d7d7; font-weight: 500; }
+.form-settings__panel textarea { width: 100%; height: 250px; color: #d8d7d7; }
 /* USER FEED */
-.user-feed-item { padding: 20px; }
-.inner-user-feed-item { box-shadow: 0px 8px 20px 6px rgba(24, 32, 111, 0.2); }
-/*.user-feed-item-thumbnail { height: 350px; background-color: #ccc; background: url('assets/images/thumb.jpg'); background-size: cover; }*/
-.user-feed-item-thumbnail { height: 350px; background-color: #ccc; background-size: cover; }
-
-.user-feed-item-meta { padding: 90px 40px; text-align: center; }
-.user-feed-item-title { margin: 0; font-size: 20px;}
-.user-feed-item-date { color: #a7a7a7; }
+.user-feed__item { padding: 20px; transition: 0.5s ease-in-out; }
+.user-feed__item-thumbnail { height: 350px; background-color: #ccc; background-size: cover; }
+.user-feed__item-meta { padding: 90px 40px; text-align: center; background-color: #fff; }
+.user-feed__item-title { margin: 0; font-size: 20px; color: #3d3942; }
+.user-feed__item-date { color: #909090; font-weight: 300; }
 /* RECIPE */
 .recipe-container { margin: 35px 0 0; float: left; width: 100%; }
 /* SINGLE PAGE */
 .single-page-container { padding: 120px 0 0; }
-.single-page-thumbnail { height: 500px; background: url('assets/images/203.jpg'); background-size: cover; background-position: 100%; }
+.single-page-thumbnail { height: 500px; background-size: cover!important; background-position: 50%!important; }
 .single-page-header { text-align: center; margin: 80px 0; }
 .single-page-title { max-width: 700px; margin: 20px auto; font-size: 30px; }
-.single-page-date { color: #2ebf0a; font-size: 12px; text-transform: uppercase; letter-spacing: 5px; }
+.single-page-date { color: #1EC18F; font-size: 12px; text-transform: uppercase; letter-spacing: 5px; }
 .single-page-post-author { font-size: 12px; font-weight: 300; font-style: italic; color: #a7a7a7; }
 .single-page-entry-content p { text-align: justify; font-weight: 300; font-size: 14px; color: #a7a7a7; line-height: 1.9; }
 

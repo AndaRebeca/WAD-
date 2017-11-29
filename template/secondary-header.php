@@ -11,18 +11,18 @@
 
 	<body>
 		<!-- BEGIN SITE HEADER -->
-		<header class="site-header">
+		<header class="site-header" id="login-site-header">
 			<div class="container">
 				<div class="row">
 					<div class="site-logo col-sm-4">
-						<h1>The Magic Pan</h1>
+						<h1 class="login-logo">The Magic Pan</h1>
 					</div><!-- .site-logo -->
 					<div class="col-sm-4"></div>
 					<div class="site-navigation col-sm-4">
-						<ul class="nav-item nav-user pull-right">
-							<li class="login-btn"><span class="icon-user"></span>Login</li>
-							<li><a href="register.php">Register Now</li></a>
-						</ul>
+						<ul class="nav-item nav-user" id="header-ul">
+					<li class="login-btn page-login-btn">Login</li>
+					<li class="page-login-btn"><a href="register.php">Register Now</a></li>
+				</ul>
 					</div><!-- .site-navigation -->
 				</div><!-- .row -->
 			</div><!-- .container -->

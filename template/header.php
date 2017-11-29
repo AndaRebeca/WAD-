@@ -41,18 +41,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="site-logo col-sm-4">
-						<h1><?php echo $site_title; ?></h1>
+						<h1>
+							<a href="index.php"><?php echo $site_title; ?></a>
+						</h1>
 					</div><!-- .site-logo -->
 					<div class="col-sm-4"></div>
 					<div class="site-navigation col-sm-6 pull-right">
 						<div class="nav-item burger-menu pull-right"><div class="icon-menu"></div></div>
 						<ul class="nav-item nav-user pull-right">
 							<li class="user-avatar"><a href="account.php"><span class="user-avatar-img" style="background: url('<?php echo $user__src; ?>');"></span><?php echo $user__alias; ?></li></a>
-							<li><a href="logout.php"><span class="icon-logout"></span>Sign Out</li></a>
+							<li><a href="logout.php">Sign Out</li></a>
 						</ul>
 					</div><!-- .site-navigation -->
 				</div><!-- .row -->
 			</div><!-- .container -->
 		</header><!-- .site-header -->
 		<!-- END SITE HEADER -->
-

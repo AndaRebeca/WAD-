@@ -16,6 +16,14 @@ $blog__time = nl2br($recipeRow[4]);
 $blog__user__id = $recipeRow[5];
 $blog__date = $recipeRow[6];
 
+// Users
+$userSQL = "SELECT * FROM `users` WHERE `id` = $blog__user__id";
+$userQuery = mysqli_query($con, $userSQL);
+$userRow = mysqli_fetch_row($userQuery);
+
+$user__id = $userRow[0];
+$user__name = $userRow[1];
+
 $blogDateArr1 = explode (" ", $blog__date);
 $blogDate1 = $blogDateArr1[0];
 
@@ -39,7 +47,7 @@ $blogDateMonth = $monthArr[$blogDateMonth];
 <!-- BEGIN SINGLE PAGE CONTAINER -->
 <div class="single-page-container">
 	<div class="container-fluid no-padding">
-		<div class="single-page-thumbnail"></div><!-- .single-page-thumbnail -->
+		<div class="single-page-thumbnail" style="background: url('<?php echo $blog__thumb; ?>');"></div><!-- .single-page-thumbnail -->
 	</div><!-- .container-fluid -->
 
 	<div class="container">
@@ -48,12 +56,17 @@ $blogDateMonth = $monthArr[$blogDateMonth];
 				<!--<h3 class="single-page-date">September 20, 2017</h3>--><!-- .single-page-date -->
 				<h3 class="single-page-date"><?php echo $blogDateMonth . " " . $blogDateDay; ?>, <?php echo $blogDateYear; ?></h3><!-- .single-page-date -->
 				<h1 class="single-page-title"><?php echo $blog__title; ?></h1><!-- .single-page-title -->
-				<h4 class="single-page-post-author">Posted by <?php echo $user__alias; ?></h4> <!-- .single-page-post-author -->
+				<h4 class="single-page-post-author">Posted by <?php echo $user__name; ?></h4> <!-- .single-page-post-author -->
 
-				<a href="edit-recipe.php?&amp;recipe-id=<?php echo $recipeId; ?>" class="btn btn-info">Edit</a>
-				<a href="delete-recipe.php?&amp;recipe-id=<?php echo $recipeId; ?>" class="btn btn-danger">Delete</a>
+				<?php if ($sessionUserId == $user__id): ?>
+					<a href="edit-recipe.php?&amp;recipe-id=<?php echo $recipeId; ?>" class="btn btn-edit">
+						<span class="icon-pencil"></span> Edit
+					</a>
+					<a href="delete-recipe.php?&amp;recipe-id=<?php echo $recipeId; ?>" class="btn btn-edit">
+						<span class="icon-trash"></span> Delete
+					</a>
+				<?php endif; ?>
 			</div><!-- .single-page-header -->
-
 			<div class="single-page-entry-content col-sm-8 col-sm-offset-2">
 				<?php if (strlen($blog__thumb) > 14): ?>
 					<h2>Recipe image</h2>
